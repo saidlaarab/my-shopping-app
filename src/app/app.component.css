@@ -1,0 +1,5 @@
+div.shopping-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

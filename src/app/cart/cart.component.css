@@ -1,0 +1,15 @@
+.row img {
+  border-radius: 70px;
+}
+
+div.col-sm-3.bg-secondary.text-white {
+  border-radius: 4px;
+  line-height: 250%;
+}
+.qty-title {
+  text-align: center;
+}
+
+.price {
+  text-align: end;
+}

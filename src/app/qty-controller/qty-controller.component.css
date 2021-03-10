@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+button {
+  font-weight: bold;
+}
+
+span {
+  align-self: center;
+}

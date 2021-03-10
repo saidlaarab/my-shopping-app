@@ -1,0 +1,46 @@
+<div class="container pb-5">
+    <h1>Shopping Cart</h1>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-6">You have <strong>{{itemsCount}}</strong> items in your shopping cart</div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"><button class="btn bg-warning" (click)="clear()">Clear Shopping Cart</button></div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"><strong>Product</strong></div>
+                <div class="col-sm-3 qty-title"><strong>Quantity</strong></div>
+                <div class="col-sm-3 price"><strong>Price</strong></div>
+            </div>
+        </li>
+        <li class="list-group-item" 
+            *ngFor="let product of selectedProducts">
+            <div class="row">
+                <div class="col-sm-3"><img [src]="product.imgLink" width="70px" height="70px"></div>
+                <div class="col-sm-3">{{product.name}}</div>
+                <div class="col-sm-3">
+                    <app-qty-controller [quantity]="product.orderedQty" [productId]="product.id"></app-qty-controller>
+                </div>
+                <div class="col-sm-3 price">{{product.price * product.orderedQty | currency }}</div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-9"></div>
+                <div class="col-sm-3 bg-secondary text-white price">{{totalPrice | currency }}</div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-3">
+                    <button class="btn bg-primary text-white" routerLink="/shipping">
+                        Checkout
+                    </button>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

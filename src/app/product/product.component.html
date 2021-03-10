@@ -1,0 +1,11 @@
+<div class="card" *ngIf="product">
+    <img class="card-img-top" [src]="product.imgLink" [alt]="product.name">
+    <div class="card-body">
+        <h4>{{product.name}}</h4>
+        <p>{{product.price | currency}}</p>
+    </div>
+    <button class="btn bg-dark text-white" *ngIf="product.orderedQty === 0" (click)="increase()">Add to cart</button>
+    <div class="container-fluid" *ngIf="product.orderedQty > 0">
+        <app-qty-controller [quantity]="product.orderedQty" [message]="'in cart'" [productId]="product.id"></app-qty-controller>
+    </div>
+</div>

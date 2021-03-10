@@ -1,0 +1,17 @@
+<div class="container fixed-top categories-list">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-categories class="col-sm-3" [(selectedCategory)]="activeCategory"></app-categories>
+    </div>
+    <div class="col-sm-9"></div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-9">
+        <app-shelves class="col-sm-9" [category]="activeCategory"></app-shelves>
+      </div>
+    </div>
+</div>
